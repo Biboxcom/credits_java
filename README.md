@@ -20,7 +20,7 @@
 
 ```sh
 // 公开的api 获取kline
-BiboxFuturesClient client = new BiboxFuturesClient();
+BiboxFuturesClient client = new BiboxSpotsClient();
 List<Candlestick> res = client.getCandlestick("BTC_USD", CandlestickInterval.WEEKLY,10);
 System.out.println(res);
         
