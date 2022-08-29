@@ -321,6 +321,8 @@ abstract class BiboxCreditsClientBase {
             messageHandler.postDelayed(() -> {
                 log.error("Cannot connect to '{}'", urlWss, error);
                 reconnectWebSocket();
+                subscriptions.values().forEach(this::subscribe);
+                privateSubscriptions.values().forEach(this::subscribe);
             }, 2_000);
         }
     }
